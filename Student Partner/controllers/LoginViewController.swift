@@ -22,18 +22,34 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         self.logInButton.layer.cornerRadius = self.logInButton.frame.height / 4
-        //
-        //        self.blurBackgroundView.layer.cornerRadius = self.blurBackgroundView.frame.height / 2
-        //        self.blurBackgroundInner.layer.cornerRadius = self.blurBackgroundInner.frame.height / 2
+        
+        self.blurBackground.alpha = 0
+        self.blurBackgroundView.alpha = 0
+        self.blurBackgroundInner.alpha = 0
+        
+        self.createAccountView.alpha = 0
+        
         self.blurBackground.layer.cornerRadius = self.blurBackground.frame.height / 10
         
         self.createAccountView.layer.cornerRadius = self.createAccountView.frame.height / 8
         
-        
+        self.animateControls()
         
     }
     
     @IBAction func logInClicked(_ sender: Any) {
+    }
+    
+    func animateControls (  )  {
+        UIView.animate(withDuration: 0.2, delay: 1, options: .curveLinear, animations: {
+            
+            self.blurBackground.alpha = 1
+            self.blurBackgroundView.alpha = 1
+            self.blurBackgroundInner.alpha = 1
+            
+            self.createAccountView.alpha = 1
+            
+        })
     }
     
     /*

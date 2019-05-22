@@ -38,8 +38,14 @@ class LaunchViewController: UIViewController {
         
         self.pinkView.layer.cornerRadius = self.pinkView.frame.width / 4
         
-        // Do any additional setup after loading the view.
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
+            
+            self.performSegue(withIdentifier: "loginSegue", sender: self )
+        })
     }
+    
+    
+    
     
     func animateRedView(_ view: UIView  ) {
         
@@ -52,7 +58,7 @@ class LaunchViewController: UIViewController {
             
             UIView.addKeyframe(withRelativeStartTime: 0.25, relativeDuration: 0.25) {
                 
-                view.transform = CGAffineTransform(translationX: 150, y: -0)
+                view.transform = CGAffineTransform(translationX: 225, y: -0)
             }
             
             UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.25) {
@@ -153,10 +159,11 @@ class LaunchViewController: UIViewController {
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
+     
      */
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//    }
     
 }
